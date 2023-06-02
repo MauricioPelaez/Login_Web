@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.body {
+    background-color: #191928;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #191928;
+}
+
+.form-value {
+    display: flex;
+    position: relative;
+    width: 110%;
+    height: 550px;
+    background: #05000A;
+    justify-content: center;
+    justify-items: center;
+    border-radius: 5%;
+    animation: animacion 5s linear infinite;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@keyframes animacion {
+    15%{
+        box-shadow: 0 0 0 7px rgba(86, 0, 200, 0), 0 0 0 0 rgba(70, 20, 200, 0.6);
+    }
+
+    70%{
+        box-shadow: 0 0 0 7px rgba(70, 20, 200, 0), 0 0 0 7px rgba(60, 0, 200, 0);
+    }
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+.box-log {
+    box-sizing: border-box;
+    width: 60px;
+    height: 60px;
+    background-color: #420083;
+    overflow: hidden;
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: flex;
+    cursor: grab;
+    user-select: none;
+}
+
+.box-log::before {
+    content:'';
+    width: 500px;
+    height: 300px;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.3) 40%,
+      rgba(255, 255, 255, 0.3) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform-origin: center center;
+    position: absolute;
+    z-index: 10;
+    animation-delay: 1s;
+    animation-name: mask-ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.box-log::after {
+    content: '';
+    width: 500px;
+    height: 50px;
+    opacity: 0;
+    background-color: #fff;
+    transform-origin: center center;
+    position: absolute;
+    z-index: 1;
+    animation-delay: 1s;
+    animation-name: mask-border-ani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.box-log img {
+    width: 98%;
+    vertical-align: top;
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+@keyframes mask-ani {
+    0% {
+      transform: rotate(-36deg) translate(-40px, -430px);
+    }
+  
+    70%,
+    100% {
+      transform: rotate(-36deg) translate(-40px, 378px);
+    }
+}
+@keyframes mask-border-ani {
+    0% {
+      opacity: 0.8;
+      transform: rotate(-36deg) translate(-126px, -190px);
+    }
+  
+    70%,
+    100% {
+      opacity: 0.8;
+      transform: rotate(-36deg) translate(-126px, 355px);
+    }
+}
+
+h2 {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    margin: 3em auto 2em;
+    cursor: default;
+}
+
+/*
+#user {
+    width: 250px;
+    height: 40px;
+    font-size: 1em;
+    color: #B8AFD4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+    background: transparent;
+}
+
+
+#pass {
+    width: 100%;
+    height: 40px;
+    margin: 25px 0 20px 0;
+    font-size: 1em;
+    color: #B8AFD4;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: white;
+}
+
+*/
+
+/* TextBox en reposo */
+.input_box {
+    margin-bottom: 15px;
+    padding-top: 10px;
+}
+
+.label_input, .input_text {
+    font: 16px/16px Segoe UI;
+    color: white;
+    padding: 0;
+    cursor: text;
+    user-select: none;
+}
+
+.text_border {
+    display: flex;
+    width: 90%;
+    height: 40px;
+    padding-left: 10px;
+    border-bottom: 2px solid #BAAEC6;
+    border-top: 1px solid #BAAEC6;
+    position:  relative;
+    box-sizing: border-box;
+    border-radius: 8px;
+    transition: .25s;
+    font-size: 1em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text_border .input_text {
+    display: flex;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.text_border span{
+    color: #BAAEC6;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transition: .25s;
+}
+
+/* TextBox en focus */
+.text_border.focus {
+    border-color: #9CABFF;
+}
+
+.text_border span.focus {
+    color: #9CABFF;
+}
+
+/* TextBox top*/
+.text_border span.top {
+    left: 15px;
+    top: -10px;
+    font-size: 12px;
+    background: #05000A;
+    padding: 0 5px;
+}
+
+.show_pass {
+    display: flex;
+    color: lightgray;
+    font-size: 13px;
+    float: right;
+    user-select: none;
+    transform: translate(-20%, -50%);
+}
+
+
+/* Ubicacion de botones */
+
+.log_button{
+    display: flex;
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+/*
+.container {
+    display: flex;
+    position: relative;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+}
+*/
+
+
+.olv_pass {
+    display: flex;
+    position: relative;
+    float: right;
+    top: 15%;
+    transform: translate(-10%, -50%);
+}
+
+.rec_pass {
+    position: relative;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    user-select: none;
+}
+.rec_pass:hover {
+    color: #9CABFF;
+}
+.rec_pass:active {
+    color: #38D2FF;
+}

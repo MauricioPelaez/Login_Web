@@ -1,0 +1,171 @@
+/*Boton sin fondo con animación de borde 
+- para implementarlo  use las siguientes etiquetas en su html:
+    <div class="container">
+        <div class="center">
+            <button class = btn_crear>
+                <svg width="170px" height="40px" viewBox="0 0 120 60" class="border">
+                    <polyline points="139,1 139,59 1,59 1,1 139,1" class="bg_line" />
+                    <polyline points="139,1 139,59 1,59 1,1 139,1" class="hl_line" />
+                </svg>
+                <span>Crear cuenta</span>
+            </button>
+        </div>
+    </div>
+
+y las siguientes caracteristicas en el archivo .css de la pagina madre:
+    .container {
+    position: relative;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+y las demas que nesecite implementar...
+
+*/
+
+.btn_crear{
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: 2s ease-in-out;
+}
+
+.btn_crear span {
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.border {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 400 400;
+    stroke-dashoffset: 400;
+    transition: 2s ease-in-out;
+}
+
+.btn_crear .border:hover {
+    stroke-dashoffset: -400;
+}
+
+.btn_crear:hover{
+    background-color: #191928;
+    border-radius: 5px;
+}
+
+
+/*Inicio botón con efecto de desplazamiento
+
+- para implementarlo  use las siguientes etiquetas en su html:
+
+ <div class="text_box">
+     <a href="_log" class="btn btn_desp btn_animate">INICIAR SESIÓN</a>
+ </div>
+
+ y las siguientes caracteristicas en el archivo .css de la pagina madre:
+*/
+.text_box {
+    top: 20%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    user-select: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn:link, btn:visited {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(70, 20, 200, 0.6);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(70, 20, 200, 0.6);
+}
+
+.btn_desp {
+    background-color: #323264;
+    color: white;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn_desp::after {
+    background-color: #6432C8;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
+.btn_animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Botón INICIAR SESIÓN */
+
+.btn_login{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background: #323264;
+    border: none;
+    transition: .25s;
+    border-radius: 20px;
+    user-select: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.btn_login:hover {
+    background-color: #6432C8;
+    transform: translateY(-7px) scaleX(1.2) scaleY(1);
+    box-shadow: 0 6px 12px rgba(70, 20, 200, 0.6);
+}
+
+.btn_login:active {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(70, 20, 200, 0.6);
+}

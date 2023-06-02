@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_LOGIN_</title>
+    <style>
+        @import url(css/botones.css);
+        @import url(css/login.css);
+    </style>
+</head>
+
+<body class="body">
+    <section>
+        
+        <div class="form-box">
+            
+            <div class=form-value>
+               
+                <form action="#" method="post" name="control_acceso" id="control_acceso">
+
+                    <div class=box-log>
+                        <img src = "img/LOGO.png" id="logo" alt="PV"/>
+                    </div>
+
+                    <h2>INICIAR SESIÓN</h2>
+
+                    <div class="input_box">
+                        <label class="text_border">
+                            <span class="label_input">Ingresa tu usuario</span>
+                            <input type="text" required autocomplete="off"  class="input_text" id="user">
+                        </label>
+                    </div>
+
+                    <div class="input_box">
+                        <label class="text_border">
+                            <span class="label_input">Ingresa tu contraseña</span>
+                            <input type="password" required autocomplete="off" class="input_text" id="pass">
+                        </label>
+                    </div>
+
+                    <div class="show_pass">
+                        <label>
+                            <input type="checkbox" value="mostrar_contraseña">  Mostrar contraseña
+                        </label>
+                    </div>
+                    
+                    <div class="log_button">
+                        <input type="submit" class="btn_login"  value="INICIAR SESIÓN"> 
+                    </div>
+
+                    <div class="text_box">
+                        <a href="#" class="btn btn_desp btn_animate">Crear cuenta</a>
+                    </div>
+
+                    <div class="olv_pass">
+                         <a href="#" class="rec_pass">¿Olvidaste tu contraseña?</a>
+                    </div> 
+
+                    <!-- crear boton animado
+                    <div class="container">
+                        
+                        <button class = btn_crear onclick="prueba()">
+                            <svg width="170px" height="40px" viewBox="0 0 190 60" class="border">
+                                <polyline points="139,1 139,59 1,59 1,1 139,1" class="bg_line" />
+                                <polyline points="139,1 139,59 1,59 1,1 139,1" class="hl_line" />
+                            </svg>
+                            <span>Crear cuenta</span>
+                        </button>
+                        
+                    </div>
+                -->
+                </form>
+            </div>
+            
+        </div>
+
+        </div>
+    </section>
+    <script src="js/textBox_dim.js"></script>
+</body>
+</html>
